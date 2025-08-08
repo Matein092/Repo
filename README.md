@@ -4,6 +4,17 @@ después seleccionar RUN AS maven build y en la sección del Goal escribir:quark
 para otros entornos como consola la aplicacion se levantara con el comando mvn quarkus:dev, 
 y para verificar los JUNITS test mvn test.
 
+EJEMPLOS CURL:
+-curl -X GET http://localhost:8080/productos PARA OBTENER TODOS LOS PRODUCTOS
+
+PARA CREAR UN NUEVO PRODUCTO curl -X POST http://localhost:8080/productos 
+  -H "Content-Type: application/json" 
+  -d '{"name": "Football shoes", "price": 150000}'
+
+curl -X DELETE http://localhost:8080/productos/1 PARA ELIMINAR UN PRODUCTO POR SU ID
+
+curl -X GET http://localhost:8080/productos/9999 PARA RECIBIR LA NOTIFICACION 404
+
 5.3 Diagnostico de LOGS
 En el primer punto se nos pide identificar la causa raiz de la excepcion lanzada, lo cual es producto de que el programa esta intentando
 convertir una cadena no numerica en este caso "abc" a un numero entero, por lo que la excepcion indica que la entrada no pudo ser validada
